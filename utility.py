@@ -6,13 +6,11 @@
 from math import sqrt
 from zipfile import ZIP_LZMA
 from skops.io import dump, load
-from sklearn.feature_selection import SelectKBest, f_classif
-import pickle
 
 import numpy as np
 import pandas as pd
 
-from sklearn.metrics import matthews_corrcoef, confusion_matrix, roc_auc_score
+from sklearn.metrics import confusion_matrix, roc_auc_score
 from sklearn.pipeline import Pipeline
 
 
@@ -20,16 +18,30 @@ def get_metrics(expected, prediction):
     CM = confusion_matrix(expected, prediction)
     TN, FP = CM[0]
     FN, TP = CM[1]
-    print("Metrics:")
-    print('Accuracy:   %.3g' % ((TP+TN)/(TP+TN+FP+FN)))
-    print('Precision:  %.3g' % (TP/(TP+FP)))
-    print('Recall:     %.3g' % (TP/(TP+FN)))
-    print('F1 score:   %.3g' % (TP/(TP+0.5*(FP+FN))))
-    print('ROC-AUC:    %.3g' % roc_auc_score(expected, prediction))
-    print('MCC score:  %.3g' % ((TP * TN - FP * FN) / (sqrt(TP + FP) * sqrt(TP + FN) * sqrt(TN + FP) * sqrt(TN + FN))))
-    print('\nConfusion Matrix :\n', CM)
-    print()
+    accuracy = (TP+TN)/(TP+TN+FP+FN)
+    precision = TP/(TP+FP)
+    recall = TP/(TP+FN)
+    F1 = TP/(TP+0.5*(FP+FN))
+    roc = roc_auc_score(expected, prediction)
+    mcc = (TP * TN - FP * FN) / (sqrt(TP + FP) * sqrt(TP + FN) * sqrt(TN + FP) * sqrt(TN + FN))
+    return (accuracy, precision, recall, F1, roc, mcc, CM)
 
+
+def print_metrics(metrics_tuple):
+    print("Metrics:")
+    print('Accuracy:   %.3g' % metrics_tuple[0])
+    print('Precision:  %.3g' % metrics_tuple[1])
+    print('Recall:     %.3g' % metrics_tuple[2])
+    print('F1 score:   %.3g' % metrics_tuple[3])
+    print('ROC-AUC:    %.3g' % metrics_tuple[4])
+    print('MCC score:  %.3g' % metrics_tuple[5])
+    print('\nConfusion Matrix :\n', metrics_tuple[6], '\n')
+
+
+def get_and_print_metrics(expected, predicted):
+    metrics = get_metrics(expected, predicted)
+    print_metrics(metrics)
+    return metrics
 
 def from_csv(filename, label_name: str, fields_to_drop: tuple | list | str):
     """Reads the dataset from CSV file, then splits the labels from the data, 
