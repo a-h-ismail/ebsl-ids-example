@@ -1,7 +1,7 @@
-#!/bin/python3
+#!/usr/bin/env python3
 
 # Copyright (C) 2026 Ahmad Ismail
-# SPDX-License-Identifier: MPL-2.0
+# SPDX-License-Identifier: MIT
 
 import ebsl
 from utility import *
@@ -13,7 +13,8 @@ trust_restore_speed = 0.34
 conflict_threshold = 0.15
 id_col = "StationID"
 
-def compare_to_others(ensemble_model, tlabels):
+
+def compare_to_others(ensemble_model: ebsl.EBSL, tlabels):
     print("Hard voting:")
     predicted_hard = ensemble_model._hard_vote()
 
