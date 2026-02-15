@@ -1,0 +1,555 @@
+Reading the dataset...
+Individual models performance:
+Model rf:
+Metrics:
+Accuracy:   0.969
+Precision:  0.931
+Recall:     0.605
+F1 score:   0.734
+ROC-AUC:    0.801
+MCC score:  0.737
+
+Confusion Matrix :
+ [[912830   3149]
+ [ 27724  42516]] 
+
+Model ada:
+Metrics:
+Accuracy:   0.964
+Precision:  0.926
+Recall:     0.54
+F1 score:   0.682
+ROC-AUC:    0.768
+MCC score:  0.692
+
+Confusion Matrix :
+ [[912957   3022]
+ [ 32291  37949]] 
+
+Model hgb:
+Metrics:
+Accuracy:   0.96
+Precision:  0.93
+Recall:     0.479
+F1 score:   0.632
+ROC-AUC:    0.738
+MCC score:  0.651
+
+Confusion Matrix :
+ [[913433   2546]
+ [ 36620  33620]] 
+
+Model mlp:
+Metrics:
+Accuracy:   0.965
+Precision:  0.901
+Recall:     0.569
+F1 score:   0.698
+ROC-AUC:    0.782
+MCC score:  0.701
+
+Confusion Matrix :
+ [[911596   4383]
+ [ 30240  40000]] 
+
+Model xgb:
+Metrics:
+Accuracy:   0.963
+Precision:  0.954
+Recall:     0.508
+F1 score:   0.663
+ROC-AUC:    0.753
+MCC score:  0.681
+
+Confusion Matrix :
+ [[914271   1708]
+ [ 34582  35658]] 
+
+--------------------------------------------------
+Ensemble of ('rf', 'ada', 'hgb') in "prior" mode:
+
+* Before applying bonuses:
+EBSL classifier: conflict_threshold=0.15, max_penalty=0.8, b=5, trust_restore_speed=0.34, base_rate_choice:"prior", nb_of_classifiers = 3
+Model rf: CICR_0 = 1967/3203 = 0.614112, CICR_1 = 3255/4297 = 0.757505
+Model ada: CICR_0 = 1592/3538 = 0.449972, CICR_1 = 2745/4427 = 0.620059
+Model hgb: CICR_0 = 329/3521 = 0.0934394, CICR_1 = 1289/1746 = 0.738259
+
+EBSL (no bonuses):
+Metrics:
+Accuracy:   0.966
+Precision:  0.967
+Recall:     0.537
+F1 score:   0.69
+ROC-AUC:    0.768
+MCC score:  0.707
+
+Confusion Matrix :
+ [[914702   1277]
+ [ 32542  37698]] 
+
+Running the auto-tuning algorithm:
+Baseline MCC (no bonuses): 0.706668
+Tuning bonuses of model "rf" started:
+Class 1 bonus = 0.8, CICR = 0.757505, MCC = 0.726971
+Class 0 bonus = 0, CICR = 0.646555, MCC = 0.726971
+Tuning bonuses of model "ada" started:
+Class 1 bonus = 0.2, CICR = 0.597493, MCC = 0.730385
+Class 0 bonus = -0.8, CICR = 0.386662, MCC = 0.732989
+Tuning bonuses of model "hgb" started:
+Class 1 bonus = 0, CICR = 0.760366, MCC = 0.732989
+Class 0 bonus = -0.3, CICR = 0.074196, MCC = 0.737077
+
+* After applying bonuses:
+Model rf: CICR_0 = 1729/2646 = 0.653439, CICR_1 = 902/1591 = 0.566939
+Model ada: CICR_0 = 2265/6097 = 0.371494, CICR_1 = 2062/3648 = 0.565241
+Model hgb: CICR_0 = 464/5517 = 0.0841037, CICR_1 = 1734/2180 = 0.795413
+
+EBSL (with bonuses):
+Metrics:
+Accuracy:   0.969
+Precision:  0.947
+Recall:     0.595
+F1 score:   0.731
+ROC-AUC:    0.796
+MCC score:  0.737
+
+Confusion Matrix :
+ [[913650   2329]
+ [ 28448  41792]] 
+
+Hard voting:
+Metrics:
+Accuracy:   0.966
+Precision:  0.95
+Recall:     0.554
+F1 score:   0.7
+ROC-AUC:    0.776
+MCC score:  0.711
+
+Confusion Matrix :
+ [[913931   2048]
+ [ 31310  38930]] 
+
+Soft voting:
+Metrics:
+Accuracy:   0.965
+Precision:  0.954
+Recall:     0.539
+F1 score:   0.689
+ROC-AUC:    0.769
+MCC score:  0.703
+
+Confusion Matrix :
+ [[914162   1817]
+ [ 32374  37866]] 
+
+--------------------------------------------------
+Ensemble of ('rf', 'ada', 'hgb') in "trust" mode:
+
+* Before applying bonuses:
+EBSL classifier: conflict_threshold=0.15, max_penalty=0.8, b=5, trust_restore_speed=0.34, base_rate_choice:"trust", nb_of_classifiers = 3
+Model rf: CICR_0 = 1/10 = 0.1, CICR_1 = 430/479 = 0.897704
+Model ada: CICR_0 = 256/1276 = 0.200627, CICR_1 = 301/908 = 0.331498
+Model hgb: CICR_0 = 13/1332 = 0.00975976, CICR_1 = 11/36 = 0.305556
+
+EBSL (no bonuses):
+Metrics:
+Accuracy:   0.967
+Precision:  0.954
+Recall:     0.561
+F1 score:   0.706
+ROC-AUC:    0.779
+MCC score:  0.717
+
+Confusion Matrix :
+ [[914066   1913]
+ [ 30861  39379]] 
+
+Running the auto-tuning algorithm:
+Baseline MCC (no bonuses): 0.717236
+Tuning bonuses of model "rf" started:
+Class 1 bonus = 0.8, CICR = 0.897704, MCC = 0.72376
+Class 0 bonus = -0.8, CICR = 0.1, MCC = 0.72377
+Tuning bonuses of model "ada" started:
+Class 1 bonus = -0.2, CICR = 0.331498, MCC = 0.723924
+Class 0 bonus = -0.8, CICR = 0.200627, MCC = 0.72451
+Tuning bonuses of model "hgb" started:
+Class 1 bonus = 0, CICR = 0.305556, MCC = 0.72451
+Class 0 bonus = -0.8, CICR = 0.00975976, MCC = 0.724759
+
+* After applying bonuses:
+Model rf: CICR_0 = 1/10 = 0.1, CICR_1 = 430/479 = 0.897704
+Model ada: CICR_0 = 256/1276 = 0.200627, CICR_1 = 301/908 = 0.331498
+Model hgb: CICR_0 = 13/1332 = 0.00975976, CICR_1 = 11/36 = 0.305556
+
+EBSL (with bonuses):
+Metrics:
+Accuracy:   0.968
+Precision:  0.953
+Recall:     0.572
+F1 score:   0.715
+ROC-AUC:    0.785
+MCC score:  0.725
+
+Confusion Matrix :
+ [[914018   1961]
+ [ 30057  40183]] 
+
+Hard voting:
+Metrics:
+Accuracy:   0.966
+Precision:  0.95
+Recall:     0.554
+F1 score:   0.7
+ROC-AUC:    0.776
+MCC score:  0.711
+
+Confusion Matrix :
+ [[913931   2048]
+ [ 31310  38930]] 
+
+Soft voting:
+Metrics:
+Accuracy:   0.965
+Precision:  0.954
+Recall:     0.539
+F1 score:   0.689
+ROC-AUC:    0.769
+MCC score:  0.703
+
+Confusion Matrix :
+ [[914162   1817]
+ [ 32374  37866]] 
+
+--------------------------------------------------
+Ensemble of ('mlp', 'ada', 'xgb') in "prior" mode:
+
+* Before applying bonuses:
+EBSL classifier: conflict_threshold=0.15, max_penalty=0.8, b=5, trust_restore_speed=0.34, base_rate_choice:"prior", nb_of_classifiers = 3
+Model mlp: CICR_0 = 2112/3266 = 0.646663, CICR_1 = 4166/7050 = 0.590922
+Model ada: CICR_0 = 1396/2753 = 0.507083, CICR_1 = 3481/5348 = 0.650898
+Model xgb: CICR_0 = 733/1993 = 0.367787, CICR_1 = 1514/2304 = 0.657118
+
+EBSL (no bonuses):
+Metrics:
+Accuracy:   0.965
+Precision:  0.982
+Recall:     0.52
+F1 score:   0.68
+ROC-AUC:    0.759
+MCC score:  0.701
+
+Confusion Matrix :
+ [[915325    654]
+ [ 33741  36499]] 
+
+Running the auto-tuning algorithm:
+Baseline MCC (no bonuses): 0.700953
+Tuning bonuses of model "mlp" started:
+Class 1 bonus = 0.4, CICR = 0.590922, MCC = 0.717262
+Class 0 bonus = 0.1, CICR = 0.645689, MCC = 0.717441
+Tuning bonuses of model "ada" started:
+Class 1 bonus = 0.2, CICR = 0.577667, MCC = 0.720946
+Class 0 bonus = -0.2, CICR = 0.434191, MCC = 0.721928
+Tuning bonuses of model "xgb" started:
+Class 1 bonus = 0, CICR = 0.886664, MCC = 0.721928
+Class 0 bonus = -0.3, CICR = 0.23736, MCC = 0.72337
+
+* After applying bonuses:
+Model mlp: CICR_0 = 1690/2694 = 0.62732, CICR_1 = 1739/3340 = 0.520659
+Model ada: CICR_0 = 1856/4383 = 0.423454, CICR_1 = 2260/4045 = 0.558714
+Model xgb: CICR_0 = 924/3901 = 0.236862, CICR_1 = 5403/6048 = 0.893353
+
+EBSL (with bonuses):
+Metrics:
+Accuracy:   0.967
+Precision:  0.956
+Recall:     0.568
+F1 score:   0.713
+ROC-AUC:    0.783
+MCC score:  0.723
+
+Confusion Matrix :
+ [[914143   1836]
+ [ 30319  39921]] 
+
+Hard voting:
+Metrics:
+Accuracy:   0.966
+Precision:  0.961
+Recall:     0.539
+F1 score:   0.691
+ROC-AUC:    0.769
+MCC score:  0.706
+
+Confusion Matrix :
+ [[914434   1545]
+ [ 32356  37884]] 
+
+Soft voting:
+Metrics:
+Accuracy:   0.965
+Precision:  0.965
+Recall:     0.532
+F1 score:   0.685
+ROC-AUC:    0.765
+MCC score:  0.702
+
+Confusion Matrix :
+ [[914614   1365]
+ [ 32900  37340]] 
+
+--------------------------------------------------
+Ensemble of ('mlp', 'ada', 'xgb') in "trust" mode:
+
+* Before applying bonuses:
+EBSL classifier: conflict_threshold=0.15, max_penalty=0.8, b=5, trust_restore_speed=0.34, base_rate_choice:"trust", nb_of_classifiers = 3
+Model mlp: CICR_0 = 34/270 = 0.125926, CICR_1 = 1659/2047 = 0.810454
+Model ada: CICR_0 = 226/1256 = 0.179936, CICR_1 = 608/1450 = 0.41931
+Model xgb: CICR_0 = 31/1383 = 0.022415, CICR_1 = 154/190 = 0.810526
+
+EBSL (no bonuses):
+Metrics:
+Accuracy:   0.966
+Precision:  0.956
+Recall:     0.541
+F1 score:   0.691
+ROC-AUC:    0.77
+MCC score:  0.705
+
+Confusion Matrix :
+ [[914243   1736]
+ [ 32234  38006]] 
+
+Running the auto-tuning algorithm:
+Baseline MCC (no bonuses): 0.705178
+Tuning bonuses of model "mlp" started:
+Class 1 bonus = 0.8, CICR = 0.810454, MCC = 0.717887
+Class 0 bonus = -0.8, CICR = 0.125926, MCC = 0.718328
+Tuning bonuses of model "ada" started:
+Class 1 bonus = 0, CICR = 0.41931, MCC = 0.718328
+Class 0 bonus = 0, CICR = 0.179936, MCC = 0.718328
+Tuning bonuses of model "xgb" started:
+Class 1 bonus = 0.1, CICR = 0.810526, MCC = 0.718328
+Class 0 bonus = -0.8, CICR = 0.022415, MCC = 0.718567
+
+* After applying bonuses:
+Model mlp: CICR_0 = 34/270 = 0.125926, CICR_1 = 1659/2047 = 0.810454
+Model ada: CICR_0 = 226/1256 = 0.179936, CICR_1 = 608/1450 = 0.41931
+Model xgb: CICR_0 = 31/1383 = 0.022415, CICR_1 = 154/190 = 0.810526
+
+EBSL (with bonuses):
+Metrics:
+Accuracy:   0.967
+Precision:  0.948
+Recall:     0.566
+F1 score:   0.709
+ROC-AUC:    0.782
+MCC score:  0.719
+
+Confusion Matrix :
+ [[913805   2174]
+ [ 30475  39765]] 
+
+Hard voting:
+Metrics:
+Accuracy:   0.966
+Precision:  0.961
+Recall:     0.539
+F1 score:   0.691
+ROC-AUC:    0.769
+MCC score:  0.706
+
+Confusion Matrix :
+ [[914434   1545]
+ [ 32356  37884]] 
+
+Soft voting:
+Metrics:
+Accuracy:   0.965
+Precision:  0.965
+Recall:     0.532
+F1 score:   0.685
+ROC-AUC:    0.765
+MCC score:  0.702
+
+Confusion Matrix :
+ [[914614   1365]
+ [ 32900  37340]] 
+
+--------------------------------------------------
+Ensemble of ('rf', 'mlp', 'ada', 'xgb', 'hgb') in "prior" mode:
+
+* Before applying bonuses:
+EBSL classifier: conflict_threshold=0.15, max_penalty=0.8, b=5, trust_restore_speed=0.34, base_rate_choice:"prior", nb_of_classifiers = 5
+Model rf: CICR_0 = 3123/4548 = 0.686675, CICR_1 = 4204/5424 = 0.775074
+Model mlp: CICR_0 = 3196/4287 = 0.74551, CICR_1 = 4257/7022 = 0.606238
+Model ada: CICR_0 = 2160/4045 = 0.533993, CICR_1 = 3815/5762 = 0.662096
+Model xgb: CICR_0 = 667/2178 = 0.306244, CICR_1 = 2942/3556 = 0.827334
+Model hgb: CICR_0 = 715/3139 = 0.22778, CICR_1 = 708/1366 = 0.518302
+
+EBSL (no bonuses):
+Metrics:
+Accuracy:   0.965
+Precision:  0.974
+Recall:     0.525
+F1 score:   0.682
+ROC-AUC:    0.762
+MCC score:  0.701
+
+Confusion Matrix :
+ [[915003    976]
+ [ 33375  36865]] 
+
+Running the auto-tuning algorithm:
+Baseline MCC (no bonuses): 0.70131
+Tuning bonuses of model "rf" started:
+Class 1 bonus = 0.6, CICR = 0.775074, MCC = 0.728526
+Class 0 bonus = 0, CICR = 0.698531, MCC = 0.728526
+Tuning bonuses of model "mlp" started:
+Class 1 bonus = 0.3, CICR = 0.517668, MCC = 0.732664
+Class 0 bonus = 0, CICR = 0.691988, MCC = 0.732664
+Tuning bonuses of model "ada" started:
+Class 1 bonus = 0.3, CICR = 0.568845, MCC = 0.73562
+Class 0 bonus = -0.1, CICR = 0.455346, MCC = 0.736495
+Tuning bonuses of model "xgb" started:
+Class 1 bonus = 0, CICR = 0.904303, MCC = 0.736495
+Class 0 bonus = 0, CICR = 0.18047, MCC = 0.736495
+Tuning bonuses of model "hgb" started:
+Class 1 bonus = 0, CICR = 0.639906, MCC = 0.736495
+Class 0 bonus = -0.5, CICR = 0.150203, MCC = 0.737434
+
+* After applying bonuses:
+Model rf: CICR_0 = 2633/3785 = 0.695641, CICR_1 = 1373/2198 = 0.624659
+Model mlp: CICR_0 = 3116/4542 = 0.686041, CICR_1 = 2180/4484 = 0.486173
+Model ada: CICR_0 = 2596/5760 = 0.450694, CICR_1 = 2068/3898 = 0.530528
+Model xgb: CICR_0 = 799/4509 = 0.177201, CICR_1 = 5407/5945 = 0.909504
+Model hgb: CICR_0 = 843/5454 = 0.154565, CICR_1 = 1202/1813 = 0.66299
+
+EBSL (with bonuses):
+Metrics:
+Accuracy:   0.969
+Precision:  0.954
+Recall:     0.591
+F1 score:   0.73
+ROC-AUC:    0.794
+MCC score:  0.737
+
+Confusion Matrix :
+ [[913983   1996]
+ [ 28732  41508]] 
+
+Hard voting:
+Metrics:
+Accuracy:   0.966
+Precision:  0.957
+Recall:     0.544
+F1 score:   0.694
+ROC-AUC:    0.771
+MCC score:  0.708
+
+Confusion Matrix :
+ [[914279   1700]
+ [ 32012  38228]] 
+
+Soft voting:
+Metrics:
+Accuracy:   0.966
+Precision:  0.963
+Recall:     0.537
+F1 score:   0.689
+ROC-AUC:    0.768
+MCC score:  0.705
+
+Confusion Matrix :
+ [[914531   1448]
+ [ 32540  37700]] 
+
+--------------------------------------------------
+Ensemble of ('rf', 'mlp', 'ada', 'xgb', 'hgb') in "trust" mode:
+
+* Before applying bonuses:
+EBSL classifier: conflict_threshold=0.15, max_penalty=0.8, b=5, trust_restore_speed=0.34, base_rate_choice:"trust", nb_of_classifiers = 5
+Model rf: CICR_0 = 1515/2074 = 0.730473, CICR_1 = 2136/2795 = 0.764222
+Model mlp: CICR_0 = 814/1502 = 0.541944, CICR_1 = 1912/3588 = 0.532887
+Model ada: CICR_0 = 1582/3323 = 0.476076, CICR_1 = 1240/2671 = 0.464246
+Model xgb: CICR_0 = 228/1469 = 0.155208, CICR_1 = 1533/1754 = 0.874002
+Model hgb: CICR_0 = 100/1803 = 0.0554631, CICR_1 = 136/374 = 0.363636
+
+EBSL (no bonuses):
+Metrics:
+Accuracy:   0.966
+Precision:  0.958
+Recall:     0.551
+F1 score:   0.7
+ROC-AUC:    0.775
+MCC score:  0.712
+
+Confusion Matrix :
+ [[914265   1714]
+ [ 31536  38704]] 
+
+Running the auto-tuning algorithm:
+Baseline MCC (no bonuses): 0.712429
+Tuning bonuses of model "rf" started:
+Class 1 bonus = 0.8, CICR = 0.764222, MCC = 0.726601
+Class 0 bonus = 0, CICR = 0.730473, MCC = 0.726601
+Tuning bonuses of model "mlp" started:
+Class 1 bonus = 0.4, CICR = 0.532887, MCC = 0.727666
+Class 0 bonus = 0, CICR = 0.541944, MCC = 0.727666
+Tuning bonuses of model "ada" started:
+Class 1 bonus = 0, CICR = 0.464246, MCC = 0.727666
+Class 0 bonus = 0, CICR = 0.476076, MCC = 0.727666
+Tuning bonuses of model "xgb" started:
+Class 1 bonus = 0, CICR = 0.874002, MCC = 0.727666
+Class 0 bonus = -0.2, CICR = 0.155208, MCC = 0.727834
+Tuning bonuses of model "hgb" started:
+Class 1 bonus = 0, CICR = 0.363636, MCC = 0.727834
+Class 0 bonus = -0.2, CICR = 0.0554631, MCC = 0.727865
+
+* After applying bonuses:
+Model rf: CICR_0 = 1515/2074 = 0.730473, CICR_1 = 2136/2795 = 0.764222
+Model mlp: CICR_0 = 814/1502 = 0.541944, CICR_1 = 1912/3588 = 0.532887
+Model ada: CICR_0 = 1582/3323 = 0.476076, CICR_1 = 1240/2671 = 0.464246
+Model xgb: CICR_0 = 228/1469 = 0.155208, CICR_1 = 1533/1754 = 0.874002
+Model hgb: CICR_0 = 100/1803 = 0.0554631, CICR_1 = 136/374 = 0.363636
+
+EBSL (with bonuses):
+Metrics:
+Accuracy:   0.968
+Precision:  0.943
+Recall:     0.583
+F1 score:   0.721
+ROC-AUC:    0.79
+MCC score:  0.728
+
+Confusion Matrix :
+ [[913521   2458]
+ [ 29265  40975]] 
+
+Hard voting:
+Metrics:
+Accuracy:   0.966
+Precision:  0.957
+Recall:     0.544
+F1 score:   0.694
+ROC-AUC:    0.771
+MCC score:  0.708
+
+Confusion Matrix :
+ [[914279   1700]
+ [ 32012  38228]] 
+
+Soft voting:
+Metrics:
+Accuracy:   0.966
+Precision:  0.963
+Recall:     0.537
+F1 score:   0.689
+ROC-AUC:    0.768
+MCC score:  0.705
+
+Confusion Matrix :
+ [[914531   1448]
+ [ 32540  37700]] 
+
