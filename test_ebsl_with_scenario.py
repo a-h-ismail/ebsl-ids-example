@@ -7,11 +7,15 @@ import ebsl
 from utility import *
 
 # EBSL parameters
-max_penalty = 0.8
-b = 5
+max_penalty = 0.7
+b = 8
 trust_restore_speed = 0.34
 conflict_threshold = 0.15
 id_col = "StationID"
+
+# Tuning parameters
+max_bonus = 0.8
+bonus_step = 0.05
 
 
 def compare_to_others(ensemble_model: ebsl.EBSL, tlabels):
@@ -82,7 +86,7 @@ for col_names in (("rf", "ada", "hgb"), ("mlp", "ada", "xgb"), ("rf", "mlp", "ad
         no_bonus_validation_mcc = metrics[5]
 
         print("Running the auto-tuning algorithm:")
-        ebsl_clf.auto_tune(vfeatures, vlabels, bonus_step=0.1, over_stepping=False,
+        ebsl_clf.auto_tune(vfeatures, vlabels, bonus_step, max_bonus, over_stepping=True,
                            _show_progress=True, descending_order=True)
 
         vpredicted_with_bonuses = ebsl_clf.predict(vfeatures, _true_labels=vlabels)
