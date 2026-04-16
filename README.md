@@ -8,5 +8,6 @@ This repository contains the code and pre-trained models to reproduce results in
 1. Install required packages listed in `requirements.txt`.
 1. Copy the datasets (will be published [here](https://github.com/A-Wehby/Connected-Cars-DDoS-Dataset)) to the `datasets` directory.
 1. Run the `test_ebsl_with_scenario.py` file and check the results. Redirecting output to a file is recommended.
+1. Repeat step 4 with the `test_other_dynamic_ensembles.py` file to obtain results from other dynamic ensembles.
 
-Existing results from a local run are in `results.txt` file.
+Existing results from a local run of the EBSL are in `results.txt` file, while other dynamic ensemble results are in the `others.txt` file.
