@@ -1,0 +1,292 @@
+Reading the dataset...
+Individual models performance:
+Model rf:
+Metrics:
+Accuracy:   0.969
+Precision:  0.931
+Recall:     0.605
+F1 score:   0.734
+ROC-AUC:    0.801
+MCC score:  0.737
+
+Confusion Matrix :
+ [[912830   3149]
+ [ 27724  42516]] 
+
+Model ada:
+Metrics:
+Accuracy:   0.964
+Precision:  0.926
+Recall:     0.54
+F1 score:   0.682
+ROC-AUC:    0.768
+MCC score:  0.692
+
+Confusion Matrix :
+ [[912957   3022]
+ [ 32291  37949]] 
+
+Model hgb:
+Metrics:
+Accuracy:   0.96
+Precision:  0.93
+Recall:     0.479
+F1 score:   0.632
+ROC-AUC:    0.738
+MCC score:  0.651
+
+Confusion Matrix :
+ [[913433   2546]
+ [ 36620  33620]] 
+
+Model mlp:
+Metrics:
+Accuracy:   0.965
+Precision:  0.901
+Recall:     0.569
+F1 score:   0.698
+ROC-AUC:    0.782
+MCC score:  0.701
+
+Confusion Matrix :
+ [[911596   4383]
+ [ 30240  40000]] 
+
+Model xgb:
+Metrics:
+Accuracy:   0.963
+Precision:  0.954
+Recall:     0.508
+F1 score:   0.663
+ROC-AUC:    0.753
+MCC score:  0.681
+
+Confusion Matrix :
+ [[914271   1708]
+ [ 34582  35658]] 
+
+--------------------------------------------------
+Ensemble of ('rf', 'ada', 'hgb')
+Using Oracle:
+Metrics:
+Accuracy:   0.973
+Precision:  0.987
+Recall:     0.625
+F1 score:   0.765
+ROC-AUC:    0.812
+MCC score:  0.774
+
+Confusion Matrix :
+ [[915387    592]
+ [ 26341  43899]] 
+
+--------------------------------------------------
+Ensemble of ('rf', 'ada', 'hgb')
+Using DESKNN:
+Metrics:
+Accuracy:   0.972
+Precision:  0.985
+Recall:     0.623
+F1 score:   0.764
+ROC-AUC:    0.811
+MCC score:  0.772
+
+Confusion Matrix :
+ [[915301    678]
+ [ 26449  43791]] 
+
+--------------------------------------------------
+Ensemble of ('rf', 'ada', 'hgb')
+Using DESMI:
+Metrics:
+Accuracy:   0.96
+Precision:  0.93
+Recall:     0.479
+F1 score:   0.632
+ROC-AUC:    0.738
+MCC score:  0.651
+
+Confusion Matrix :
+ [[913433   2546]
+ [ 36620  33620]] 
+
+--------------------------------------------------
+Ensemble of ('rf', 'ada', 'hgb')
+Using DESP:
+Metrics:
+Accuracy:   0.97
+Precision:  0.958
+Recall:     0.603
+F1 score:   0.74
+ROC-AUC:    0.8
+MCC score:  0.747
+
+Confusion Matrix :
+ [[914118   1861]
+ [ 27899  42341]] 
+
+--------------------------------------------------
+Ensemble of ('rf', 'ada', 'hgb')
+Using KNORAU:
+Metrics:
+Accuracy:   0.97
+Precision:  0.957
+Recall:     0.609
+F1 score:   0.744
+ROC-AUC:    0.803
+MCC score:  0.75
+
+Confusion Matrix :
+ [[914050   1929]
+ [ 27488  42752]] 
+
+--------------------------------------------------
+Ensemble of ('mlp', 'ada', 'xgb')
+Using Oracle:
+Metrics:
+Accuracy:   0.972
+Precision:  0.99
+Recall:     0.607
+F1 score:   0.753
+ROC-AUC:    0.803
+MCC score:  0.764
+
+Confusion Matrix :
+ [[915569    410]
+ [ 27602  42638]] 
+
+--------------------------------------------------
+Ensemble of ('mlp', 'ada', 'xgb')
+Using DESKNN:
+Metrics:
+Accuracy:   0.971
+Precision:  0.989
+Recall:     0.603
+F1 score:   0.749
+ROC-AUC:    0.801
+MCC score:  0.76
+
+Confusion Matrix :
+ [[915500    479]
+ [ 27869  42371]] 
+
+--------------------------------------------------
+Ensemble of ('mlp', 'ada', 'xgb')
+Using DESMI:
+Metrics:
+Accuracy:   0.963
+Precision:  0.954
+Recall:     0.508
+F1 score:   0.663
+ROC-AUC:    0.753
+MCC score:  0.681
+
+Confusion Matrix :
+ [[914271   1708]
+ [ 34582  35658]] 
+
+--------------------------------------------------
+Ensemble of ('mlp', 'ada', 'xgb')
+Using DESP:
+Metrics:
+Accuracy:   0.969
+Precision:  0.967
+Recall:     0.579
+F1 score:   0.724
+ROC-AUC:    0.789
+MCC score:  0.735
+
+Confusion Matrix :
+ [[914576   1403]
+ [ 29550  40690]] 
+
+--------------------------------------------------
+Ensemble of ('mlp', 'ada', 'xgb')
+Using KNORAU:
+Metrics:
+Accuracy:   0.969
+Precision:  0.966
+Recall:     0.585
+F1 score:   0.729
+ROC-AUC:    0.792
+MCC score:  0.738
+
+Confusion Matrix :
+ [[914531   1448]
+ [ 29164  41076]] 
+
+--------------------------------------------------
+Ensemble of ('rf', 'mlp', 'ada', 'xgb', 'hgb')
+Using Oracle:
+Metrics:
+Accuracy:   0.974
+Precision:  0.992
+Recall:     0.642
+F1 score:   0.779
+ROC-AUC:    0.821
+MCC score:  0.787
+
+Confusion Matrix :
+ [[915608    371]
+ [ 25158  45082]] 
+
+--------------------------------------------------
+Ensemble of ('rf', 'mlp', 'ada', 'xgb', 'hgb')
+Using DESKNN:
+Metrics:
+Accuracy:   0.97
+Precision:  0.991
+Recall:     0.585
+F1 score:   0.736
+ROC-AUC:    0.792
+MCC score:  0.749
+
+Confusion Matrix :
+ [[915592    387]
+ [ 29133  41107]] 
+
+--------------------------------------------------
+Ensemble of ('rf', 'mlp', 'ada', 'xgb', 'hgb')
+Using DESMI:
+Metrics:
+Accuracy:   0.96
+Precision:  0.97
+Recall:     0.448
+F1 score:   0.613
+ROC-AUC:    0.723
+MCC score:  0.644
+
+Confusion Matrix :
+ [[915004    975]
+ [ 38776  31464]] 
+
+--------------------------------------------------
+Ensemble of ('rf', 'mlp', 'ada', 'xgb', 'hgb')
+Using DESP:
+Metrics:
+Accuracy:   0.97
+Precision:  0.965
+Recall:     0.608
+F1 score:   0.746
+ROC-AUC:    0.803
+MCC score:  0.753
+
+Confusion Matrix :
+ [[914428   1551]
+ [ 27556  42684]] 
+
+--------------------------------------------------
+Ensemble of ('rf', 'mlp', 'ada', 'xgb', 'hgb')
+Using KNORAU:
+Metrics:
+Accuracy:   0.971
+Precision:  0.966
+Recall:     0.61
+F1 score:   0.748
+ROC-AUC:    0.804
+MCC score:  0.755
+
+Confusion Matrix :
+ [[914491   1488]
+ [ 27374  42866]] 
+
