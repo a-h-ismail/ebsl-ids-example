@@ -69,7 +69,7 @@ Confusion Matrix :
 Ensemble of ('rf', 'ada', 'hgb') in "prior" mode:
 
 * Before applying bonuses:
-EBSL classifier: conflict_threshold=0.15, max_penalty=0.7, b=8, trust_restore_speed=0.34, base_rate_choice:"prior", nb_of_classifiers = 3
+EBSL classifier: conflict_threshold=0.15, m=0.7, r=8, trust_restore_speed=0.34, base_rate_choice:"prior", nb_of_classifiers = 3
 Model rf: CICR_0 = 3794/5447 = 0.69653, CICR_1 = 6788/8049 = 0.843335
 Model ada: CICR_0 = 2474/5268 = 0.469628, CICR_1 = 4289/5978 = 0.717464
 Model hgb: CICR_0 = 1828/8371 = 0.218373, CICR_1 = 2274/2889 = 0.787124
@@ -147,7 +147,7 @@ Confusion Matrix :
 Ensemble of ('rf', 'ada', 'hgb') in "trust" mode:
 
 * Before applying bonuses:
-EBSL classifier: conflict_threshold=0.15, max_penalty=0.7, b=8, trust_restore_speed=0.34, base_rate_choice:"trust", nb_of_classifiers = 3
+EBSL classifier: conflict_threshold=0.15, m=0.7, r=8, trust_restore_speed=0.34, base_rate_choice:"trust", nb_of_classifiers = 3
 Model rf: CICR_0 = 543/867 = 0.626298, CICR_1 = 2612/2810 = 0.929537
 Model ada: CICR_0 = 271/1726 = 0.15701, CICR_1 = 467/1080 = 0.432407
 Model hgb: CICR_0 = 452/2554 = 0.176977, CICR_1 = 327/391 = 0.836317
@@ -225,7 +225,7 @@ Confusion Matrix :
 Ensemble of ('mlp', 'ada', 'xgb') in "prior" mode:
 
 * Before applying bonuses:
-EBSL classifier: conflict_threshold=0.15, max_penalty=0.7, b=8, trust_restore_speed=0.34, base_rate_choice:"prior", nb_of_classifiers = 3
+EBSL classifier: conflict_threshold=0.15, m=0.7, r=8, trust_restore_speed=0.34, base_rate_choice:"prior", nb_of_classifiers = 3
 Model mlp: CICR_0 = 3515/5594 = 0.628352, CICR_1 = 5489/8097 = 0.677905
 Model ada: CICR_0 = 2743/5325 = 0.515117, CICR_1 = 4079/5996 = 0.680287
 Model xgb: CICR_0 = 3030/7329 = 0.413426, CICR_1 = 5767/6513 = 0.88546
@@ -303,7 +303,7 @@ Confusion Matrix :
 Ensemble of ('mlp', 'ada', 'xgb') in "trust" mode:
 
 * Before applying bonuses:
-EBSL classifier: conflict_threshold=0.15, max_penalty=0.7, b=8, trust_restore_speed=0.34, base_rate_choice:"trust", nb_of_classifiers = 3
+EBSL classifier: conflict_threshold=0.15, m=0.7, r=8, trust_restore_speed=0.34, base_rate_choice:"trust", nb_of_classifiers = 3
 Model mlp: CICR_0 = 201/708 = 0.283898, CICR_1 = 2279/2765 = 0.824231
 Model ada: CICR_0 = 279/1521 = 0.183432, CICR_1 = 1035/1937 = 0.534331
 Model xgb: CICR_0 = 863/3235 = 0.26677, CICR_1 = 1023/1246 = 0.821027
@@ -381,7 +381,7 @@ Confusion Matrix :
 Ensemble of ('rf', 'mlp', 'ada', 'xgb', 'hgb') in "prior" mode:
 
 * Before applying bonuses:
-EBSL classifier: conflict_threshold=0.15, max_penalty=0.7, b=8, trust_restore_speed=0.34, base_rate_choice:"prior", nb_of_classifiers = 5
+EBSL classifier: conflict_threshold=0.15, m=0.7, r=8, trust_restore_speed=0.34, base_rate_choice:"prior", nb_of_classifiers = 5
 Model rf: CICR_0 = 4763/6578 = 0.72408, CICR_1 = 6947/8376 = 0.829394
 Model mlp: CICR_0 = 4401/6719 = 0.655008, CICR_1 = 5875/8680 = 0.676843
 Model ada: CICR_0 = 3312/6086 = 0.5442, CICR_1 = 5316/7336 = 0.724646
@@ -469,7 +469,7 @@ Confusion Matrix :
 Ensemble of ('rf', 'mlp', 'ada', 'xgb', 'hgb') in "trust" mode:
 
 * Before applying bonuses:
-EBSL classifier: conflict_threshold=0.15, max_penalty=0.7, b=8, trust_restore_speed=0.34, base_rate_choice:"trust", nb_of_classifiers = 5
+EBSL classifier: conflict_threshold=0.15, m=0.7, r=8, trust_restore_speed=0.34, base_rate_choice:"trust", nb_of_classifiers = 5
 Model rf: CICR_0 = 2270/3482 = 0.651924, CICR_1 = 4413/5275 = 0.836588
 Model mlp: CICR_0 = 977/2355 = 0.414862, CICR_1 = 2315/4027 = 0.57487
 Model ada: CICR_0 = 1631/3676 = 0.443689, CICR_1 = 1695/3131 = 0.541361

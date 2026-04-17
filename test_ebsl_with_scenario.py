@@ -8,7 +8,7 @@ from utility import *
 
 # EBSL parameters
 max_penalty = 0.7
-b = 8
+r = 8
 trust_restore_speed = 0.34
 conflict_threshold = 0.15
 id_col = "StationID"
@@ -60,7 +60,7 @@ for col_names in (("rf", "ada", "hgb"), ("mlp", "ada", "xgb"), ("rf", "mlp", "ad
     for BR_choice in ("prior", "trust"):
         print(separator)
         print("Ensemble of", col_names, "in \"%s\" mode:" % BR_choice)
-        ebsl_clf = ebsl.EBSL(conflict_threshold, max_penalty, b, trust_restore_speed, BR_choice, id_col)
+        ebsl_clf = ebsl.EBSL(conflict_threshold, max_penalty, r, trust_restore_speed, BR_choice, id_col)
 
         # Create a BSL_SM for each model and store them in the ensemble classifier
         for name in col_names:
