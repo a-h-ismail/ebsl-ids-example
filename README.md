@@ -11,3 +11,5 @@ This repository contains the code and pre-trained models to reproduce results in
 1. Repeat step 4 with the `test_other_dynamic_ensembles.py` file to obtain results from other dynamic ensembles.
 
 Existing results from a local run of the EBSL are in `results.txt` file, while other dynamic ensemble results are in the `others.txt` file.
+
+Note: All dynamic ensemble classifiers used here are "fitted" using the same validation dataset.
